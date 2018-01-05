@@ -1,0 +1,26 @@
+﻿@model WaniKaniCritical.Models.LearningPoint
+
+@{
+	string reading = null;
+	if (Model.important_reading == "kunyomi")
+	{
+		reading = Model.kunyomi;
+	}
+	else
+	{
+		reading = Model.onyomi;
+	}
+}
+
+<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col @Model.type">
+	<div class="mdl-card__title mdl-card--expand">
+		<h4>
+			@Model.character
+		</h4>
+	</div>
+	<div class="mdl-card--border">
+		@reading
+		<div class="mdl-layout-spacer"></div>
+		@Model.meaning
+	</div>
+</div>
